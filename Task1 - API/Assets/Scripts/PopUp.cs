@@ -23,10 +23,6 @@ public class PopUp : MonoBehaviour
         m_BlankClick.onClick.AddListener(PopUpToggleOff);
     }
 
-    //data":{"1":{"address":"NY","name":"Jhon","points":123},
-    //"2":{"address":"NY","name":"Dan","points":123},
-    //"3":{"address":"NY","name":"Ben","points":123}},
-
     public void PopUpToggleOnn(string clientId)
     {
         print("PopUpToggleOnn");
@@ -36,7 +32,7 @@ public class PopUp : MonoBehaviour
 
         clientIdText.text = clientId;
 
-        switch(clientId)
+        switch (clientId)
         {
 
             case "Client1":
@@ -49,10 +45,6 @@ public class PopUp : MonoBehaviour
 
             case "Client3":
                 PrintClientData(3);
-                break;
-
-            case "Client4":
-                m_message.text = "No Data Found";
                 break;
 
             case "Client5":

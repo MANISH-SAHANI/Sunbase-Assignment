@@ -13,7 +13,6 @@ public static class api_helper
 
         try
         {
-            // Make HTTP GET request to the API
             UnityWebRequest request = UnityWebRequest.Get(apiUrl);
 
             // Send the request
@@ -51,7 +50,6 @@ public static class api_helper
         MS_API msApi = new MS_API();
         try
         {
-            // Parse JSON into JsonData object
             JsonData jsonData = JsonUtility.FromJson<JsonData>(json);
 
             // Check if jsonData is null
@@ -70,12 +68,12 @@ public static class api_helper
             // Initialize data dictionary
             msApi.data = new Dictionary<string, Data>();
 
-            // Check if jsonData.data is null
-            if (jsonData.data == null)
-            {
-                Debug.LogWarning("No additional data found in JSON.");
-                return msApi;
-            }
+            //// Check if jsonData.data is null
+            //if (jsonData.data == null)
+            //{
+            //    Debug.LogWarning("No additional data found in JSON.");
+            //    return msApi;
+            //}
 
             // Populate data dictionary
             foreach (var dataEntry in jsonData.data)
@@ -85,14 +83,13 @@ public static class api_helper
         }
         catch (System.Exception ex)
         {
-            Debug.LogError("Error parsing JSON data: " + ex.Message);
+            //Debug.LogError("Error parsing JSON data: " + ex.Message);
         }
 
         return msApi;
     }
 
 
-    // Helper class to match the JSON structure
     [System.Serializable]
     private class JsonData
     {
